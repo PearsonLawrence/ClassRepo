@@ -32,7 +32,9 @@ public class PlayerMovementComponent : MonoBehaviour
     
     private float CurrentSpeed;
 
-    private Rigidbody RB;
+    public Rigidbody RB;
+
+    public Camera MyMainCamera;
 
     public Vector3 IP;
 
@@ -42,6 +44,32 @@ public class PlayerMovementComponent : MonoBehaviour
         RB = GetComponent<Rigidbody>();
     }
     
+
+    public void DoMouseLook()
+    {
+        if (MyMainCamera != null)
+        {
+            RaycastHit LaserPointerHit;
+            
+            Ray LaserRay = MyMainCamera.ScreenPointToRay(Input.mousePosition);
+
+            Physics.Raycast(LaserRay, out LaserPointerHit, 1000.0f);
+
+            //other way
+            //transform.LookAt(LaserPointerHit.point);
+
+            Vector3 PointDirectionFromPlayer = (LaserPointerHit.point - transform.position).normalized;
+            PointDirectionFromPlayer.y = 0;
+
+            transform.forward = PointDirectionFromPlayer;
+
+        }
+        else
+        {
+            Debug.Log("You have not assigned MyMainCamera Variable");
+        }
+    }
+
     public void DoMovement()
     {
 
@@ -57,6 +85,10 @@ public class PlayerMovementComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.forward);
+
+        DoMouseLook();
+
         //1
         if (Input.GetKey(KeyCode.LeftShift))
         {
