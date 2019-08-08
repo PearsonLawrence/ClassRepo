@@ -49,8 +49,8 @@ public class PlayerMovementComponent : MonoBehaviour
     {
         if (MyMainCamera != null)
         {
-            RaycastHit LaserPointerHit;
-            
+            RaycastHit LaserPointerHit; //starts out empty after raycast it is filled with hit info
+         
             Ray LaserRay = MyMainCamera.ScreenPointToRay(Input.mousePosition);
 
             Physics.Raycast(LaserRay, out LaserPointerHit, 1000.0f);
@@ -107,6 +107,8 @@ public class PlayerMovementComponent : MonoBehaviour
         DoMovement();
 
     }
+
+    
         //switch(ShirtColor)
         //{
         //    case "Red":

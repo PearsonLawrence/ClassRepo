@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\AIController.cs" />
     <Compile Include="Assets\_Scripts\AnimationControlComponent.cs" />
     <Compile Include="Assets\_Scripts\PlayerMovementComponent.cs" />
     <Reference Include="UnityEditor.StandardEvents">
