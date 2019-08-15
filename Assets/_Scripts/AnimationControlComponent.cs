@@ -44,9 +44,11 @@ public class AnimationControlComponent : MonoBehaviour {
         Debug.Log("StartDamage");
     }
 
-    public void StopDamage()
+    public void EndDamage()
     {
         //Deactivate Hitbox
         Debug.Log("StopDamage");
     }
+
+   
 }

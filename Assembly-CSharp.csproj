@@ -63,7 +63,9 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\AIController.cs" />
     <Compile Include="Assets\_Scripts\AnimationControlComponent.cs" />
+    <Compile Include="Assets\_Scripts\GameManager.cs" />
     <Compile Include="Assets\_Scripts\PlayerMovementComponent.cs" />
+    <Compile Include="Assets\_Scripts\UIController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/s179130/Desktop/ClassRepo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
